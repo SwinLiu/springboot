@@ -10,7 +10,7 @@ import com.lyplay.springboot.payroll.PayitemResult;
 import com.lyplay.springboot.payroll.PayrollPeriod;
 import com.lyplay.springboot.payroll.PayrollResult;
 
-public class PayrollMainCal {
+public class PayrollMainCal implements Runnable {
 	List<Payitem> payitemList = new ArrayList<>();
 	List<Employee> employeeList = new ArrayList<>();
 	PayrollPeriod payPeriod = new PayrollPeriod();
@@ -35,6 +35,18 @@ public class PayrollMainCal {
 		}
 		
 		return payrollResult;
+	}
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		PayrollResult result = cal();
+		// do save
+		
+		// do report
+		
+		
 	}
 	
 	
